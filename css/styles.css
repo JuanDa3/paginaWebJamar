@@ -1,0 +1,2037 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9ecef;
+    position: relative;
+}
+
+button{
+    transition: all .3s ease;
+}
+
+button:hover{
+    transform: scale(0.9);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+    text-transform: initial;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: 800;
+    color: #014f86;
+    text-transform: uppercase;
+    margin: auto;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #014f86;
+    text-transform: uppercase;
+}
+
+h2.termo {
+    color: rgb(2, 79, 2);
+}
+
+h1.termo {
+    color: rgb(2, 79, 2);
+}
+
+.contenedor {
+    width: 85%;
+    margin: auto;
+    /* margin-top: 30px; */
+}
+
+.t-centro {
+    text-align: center;
+}
+
+.t-justify {
+    text-align: justify;
+    /* text-transform: lowercase; */
+}
+
+.t-justify::first-letter {
+    text-transform: uppercase;
+}
+
+h1.titulo-termo {
+    color: rgb(2, 79, 2);
+}
+
+a.boton-desactivado button {
+    height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 6px;
+    background: #3183ac;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+a.boton-desactivado button i {
+    margin-left: 8px;
+}
+
+/**fin de utilidades**/
+.header-index {
+    width: 100%;
+    height: 100vh;
+}
+
+.menu-princ {
+    position: fixed;
+    top: 0px;
+    background-color: hsla(205, 98%, 26%, 0.987);
+    width: 100%;
+    height: 90px;
+    z-index: 100;
+}
+
+.container {
+    max-width: 65rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-btn {
+    flex: 3;
+    display: flex;
+}
+
+.nav-links {
+    flex: 2;
+}
+
+.nav-links > ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link > a {
+    line-height: 3rem;
+    color: #fff;
+    padding: 0 .8rem;
+    letter-spacing: 1px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .5s;
+}
+
+.nav-link > a > i {
+    margin-left: .2rem;
+}
+
+.nav-link:hover > a {
+    transform: scale(1.1);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 15rem;
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.dropdown ul {
+    position: relative;
+    top: 15px;
+}
+
+.dropdown-link > a {
+    display: flex;
+    background-color: #014F86;
+    color: #ffffff;
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    align-items: center;
+    justify-content: space-between;
+    transition: .3s;
+    /* border-radius: 5px; */
+}
+
+.dropdown-link:hover>a {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* .dropdown-link:not(:nth-last-child(2)){
+    border-bottom: 1px solid #efefef;
+} */
+
+.dropdown-link i {
+    transform: rotate(-90deg);
+}
+
+.arrow {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    top: -5.5px;
+    left: 32px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: .3s;
+    z-index: -1;
+}
+
+.dropdown-link:first-child:hover~.arrow {
+    background-color: #3498db;
+}
+
+.dropdown-link {
+    position: relative;
+}
+
+.dropdown.second {
+    top: 0;
+    left: 100%;
+    padding-left: .8rem;
+    cursor: pointer;
+    transform: translateX(10px);
+}
+
+.dropdown.second .arrow {
+    top: 10px;
+    left: -5.5px;
+}
+
+.nav-link:hover>.dropdown,
+.dropdown-link:hover>.dropdown {
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hamburger-menu-container {
+    flex: 1;
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hamburger-menu {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hamburger-menu div {
+    width: 1.6rem;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    position: relative;
+    z-index: 1001;
+    transition: .5s;
+}
+
+.hamburger-menu div:before,
+.hamburger-menu div:after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: .5s;
+}
+
+.hamburger-menu div:before {
+    transform: translateY(-7px);
+}
+
+.hamburger-menu div:after {
+    transform: translateY(7px);
+}
+
+#check {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    z-index: 10000;
+    cursor: pointer;
+    opacity: 0;
+    display: none;
+}
+
+#check:checked~.hamburger-menu-container .hamburger-menu div {
+    background-color: transparent;
+}
+
+#check:checked~.hamburger-menu-container .hamburger-menu div:before {
+    transform: translateY(0) rotate(-45deg);
+}
+
+#check:checked~.hamburger-menu-container .hamburger-menu div:after {
+    transform: translateY(0) rotate(45deg);
+}
+
+@keyframes animation {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.redes-menu a i {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/**inicio de swiper hero slider**/
+.slider {
+    margin-bottom: 30px;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100vh;
+    /* position: relative; */
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mascara-oscura {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.385);
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-pagination {
+    z-index: 1200;
+}
+
+.swiper-pagination span {
+    background-color: #fff;
+}
+
+.texto-slider-1 {
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 60;
+}
+
+.texto-slider-1 > div {
+    width: 40%;
+}
+
+.texto-slider-1 p {
+    padding: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    width: 40%;
+    text-align: left;
+    color: #fff;
+}
+
+.texto-slider-1 a {
+    margin-top: 40px;
+}
+
+/**main index**/
+main {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.97);
+    margin-top: 30px!important;
+}
+
+main .texto-main {
+    width: 50%;
+    padding: 30px;
+}
+
+.texto-main hr {
+    margin-top: 10px;
+    height: 3px;
+    width: 80%;
+    background-color: rgb(216, 211, 51);
+    border: none;
+}
+
+.texto-main p {
+    text-align: justify;
+    margin-top: 20px;
+}
+
+main .img-main {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-main img {
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+}
+
+/* seccion de lineas de productos */
+.lineas-productos {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 30px;
+    text-align: center;
+    background-color: #294896;
+    padding-top: 30px;
+}
+
+.lineas-productos h1 {
+    color: #fff;
+}
+
+.contenedor-cajas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.caja-productos {
+    width: 25%;
+    height: 420px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: -1px 3px 10px -1px rgba(0, 0, 0, 0.97);
+}
+
+.caja-productos img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 0;
+    opacity: .3;
+    border-radius: 5px;
+}
+
+.productos-linea {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 35px auto;
+}
+
+.productos-linea a {
+    position: relative;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    position: relative;
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 8px;
+    transition: all .3s ease;
+}
+
+.productos-linea a:hover {
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+.productos-linea h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: rgb(52, 143, 21);
+    font-weight: 800;
+}
+
+a.boton-1 button {
+    height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 6px;
+    background: rgb(52, 143, 21);
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+a.boton-1 button i {
+    margin-left: 8px;
+}
+
+/**ecopiso**/
+.ecopiso {
+    width: 100%;
+    height: 350px;
+    background-image: url(../img/ecopiso_3.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    padding-top: 50px;
+}
+
+.texto-ecopiso {
+    background-color: rgba(0, 0, 0, 0.604);
+    height: 70%;
+    width: 45%;
+    margin-left: 3%;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.texto-ecopiso h2 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.texto-ecopiso p {
+    color: #fff;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+/**Seccion compra lo nuestro**/
+.compra-lo-nuestro{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 350px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.compra-lo-nuestro div {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.compra-lo-nuestro .logo-cln{
+    width: 50%
+}
+
+.compra-lo-nuestro .texto{
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.compra-lo-nuestro .logo-cln img{
+    width: 100%
+}
+
+/**clientes**/
+
+.clientes {
+    margin-top: 30px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.clientes h1 {
+    margin-top: 60px;
+    margin-bottom: 0;
+}
+
+.cont-clientes {
+    /* width: 100%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cont-clientes img {
+    width: 12%;
+    height: 110px;
+    margin: 20px 13px;
+}
+
+.cont-clientes img.rect {
+    width: 25%;
+    height: 100%;
+    margin: auto;
+}
+
+/**pagina de ecopiso**/
+.hero-eco {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/ecopiso_8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main.ecopiso-pag {
+    display: block;
+    padding-top: 60px;
+    height: 420px;
+}
+
+main.ecopiso-pag .eco-jamar {
+    display: flex;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+main.ecopiso-pag .eco-jamar img {
+    width: 50%;
+    border-radius: 5px;
+}
+
+main.ecopiso-pag .eco-jamar p {
+    padding-left: 15px;
+    text-align: justify;
+    margin: auto;
+}
+
+.caracteristicas-eco {
+    background-color: #fff;
+}
+
+.caracteristicas-eco div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.caja-caracteristicas {
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.caja-caracteristicas h3 {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.caracteristicas-eco img {
+    width: 90%;
+    margin: auto;
+}
+
+.referencias-eco {
+    padding: 30px 0;
+    background-color: #fff;
+}
+
+.referencias-eco h2 {
+    padding-bottom: 30px;
+}
+
+.cont-referencias div.cont-caja {
+    display: flex;
+    padding: 20px;
+}
+
+.cont-referencias div.cont-caja div {
+    margin: auto;
+}
+
+.cont-referencias div.cont-caja div p {
+    text-align: justify;
+}
+
+.cont-referencias div.cont-caja div>h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.cont-referencias div.cont-caja div h4 {
+    margin: 10px 0;
+}
+
+.cont-referencias ul h3 {
+    margin: 15px 0;
+}
+
+.cont-referencias ul li {
+    border-bottom: 2px solid rgb(179, 179, 179);
+    margin: 15px 0;
+}
+
+.cont-referencias ul li p {
+    display: inline-block;
+    width: 35%;
+}
+
+.cont-referencias div.cont-caja img {
+    width: 50%;
+}
+
+
+.accesorio-eco {
+    background-color: #fff;
+}
+
+.cont-accesorios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cont-accesorios .caja-accesorio {
+    display: flex;
+    width: 45%;
+    height: 180px;
+    border: 2px solid rgba(162, 162, 162, 0.186);
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.caja-accesorio div {
+    margin: auto;
+    padding-left: 15px;
+}
+
+.caja-accesorio div h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: rgb(2, 44, 2);
+}
+
+.cont-accesorios .caja-accesorio img {
+    width: 50%;
+    height: 100%;
+}
+
+/**inicio estilos proyectos**/
+.proyectos {
+    margin-top: 30px;
+    background-color: #294896;
+    height: 500px;
+    padding-top: 20px;
+}
+
+.proyectos h1 {
+    color: #fff;
+}
+
+/**Swiper 3**/
+.contenedor-proyectos {
+    margin-top: 10px;
+    overflow: hidden;
+    height: 75%;
+    width: 80%;
+}
+
+.proyectos a button {
+    margin-top: 10px;
+}
+
+.contenedor-proyectos .swiper-container-3 {
+    width: 100%;
+    height: 95%;
+}
+
+.slide-3 {
+    text-align: center;
+    font-size: 18px;
+    /* background: #fff; */
+    height: 100%;
+    border-radius: 5px;
+}
+
+.caja-proyecto {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.caja-proyecto .cont-img {
+    max-height: 190px;
+}
+
+.caja-proyecto h3 {
+    margin-bottom: 10px;
+    font-size: 23px;
+    color: #fff;
+}
+
+.cont-texto p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 200;
+}
+
+.swiper-pagination-3 {
+    margin-top: 2px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+
+/**inicio BLog**/
+.blog {
+    background-color: #fff;
+    height: 480px;
+    width: 100%;
+    padding-top: 30px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.blog h1 {
+    margin-bottom: 30px;
+}
+
+.cont-info-blog {
+    width: 100%;
+    height: 90%;
+}
+
+/**swiper 2**/
+.swiper-container-2 {
+    width: 80%;
+    height: 100%;
+    margin-top: 30px;
+    margin: auto;
+
+}
+
+.slide-2 {
+    background-color: #014f86;
+    text-align: center;
+    font-size: 18px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.97);
+}
+
+.slide-2 a{
+    margin: auto;
+}
+
+.slide-2 h3 {
+    margin: 25px auto;
+    color: #fff;
+}
+
+.swiper-container-2 .slide-2 .img-blog {
+    width: 80%;
+    height: 50%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    object-fit: cover;
+}
+
+.swiper-container-2 .slide-2 .img-blog img {
+    border-radius: 5px;
+}
+
+.swiper-container-2 .slide-2 p {
+    color: #fff;
+    font-size: 15px;
+}
+
+/**inicio Footer**/
+footer {
+    width: 100%;
+    background-color: #014f86;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+footer div {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    margin-top: 40px;
+    padding: 15px;
+    text-align: center;
+}
+
+footer div p {
+    margin-top: 10px;
+    color: #fff;
+    text-align: justify;
+}
+
+footer div h4 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+footer div a {
+    color: #fff;
+    margin-bottom: 15px;
+    transition: all .3s ease-in-out;
+}
+
+footer div a:hover {
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+footer div a i {
+    margin-right: 5px;
+}
+
+/**Pagina de Nosotros**/
+
+
+h2.nosotros {
+    text-transform: none;
+}
+
+.nosotros {
+    width: 80%;
+    margin: 120px auto;
+    background-color: #e9ecef;
+
+}
+
+.nosotros div {
+    width: 100%;
+}
+
+.nosotros div div {
+    display: flex;
+    width: 100%;
+}
+
+.nosotros div div p {
+    text-align: justify;
+    margin: auto 30px;
+}
+
+.nosotros div div img {
+    width: 70%;
+    height: 350px;
+    border-radius: 5px;
+}
+
+.slider-nosotros{
+    width: 90%;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.186);
+    margin: auto;
+}
+
+.swiper-nosotros{
+    width: 100%;
+    height: 100%;
+}
+
+.sln{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/**pagina de productos**/
+.hero-pag-sec {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/circasia2.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.hero-pag-sec .texto-hero-pag-sec {
+    color: #ffffff;
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-pag-sec .texto-hero-pag-sec h1 {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.hero-pag-sec .texto-hero-pag-sec p {
+    font-size: 20px;
+    width: 80%;
+    text-align: center;
+    color: #fff;
+}
+
+.productos {
+    margin-top: 60px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.productos .caja-productos-sec {
+    width: 45%;
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.productos .caja-productos-sec div {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.productos .caja-productos-sec img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.productos .caja-productos-sec:hover .contenido-texto-productos {
+    height: 100%;
+}
+
+.caja-productos-sec .contenido-texto-productos {
+    position: absolute;
+    background-color: #014e868c;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+.caja-productos-sec .contenido-texto-productos {
+    color: rgb(255, 255, 255);
+}
+
+.caja-productos-sec .contenido-texto-productos h3 {
+    font-size: 30px;
+}
+
+.caja-productos-sec .contenido-texto-productos p {
+    width: 80%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/**paginas de productos**/
+
+.pro-pag-sec div {
+    margin: auto;
+    /* width: 80%; */
+    background-color: #fff;
+}
+
+.pro-pag-sec div h1 {
+    padding: 30px 0px;
+}
+
+.pro-pag-sec h2 {
+    text-transform: capitalize;
+    margin: 20px 0;
+}
+
+.pro-pag-sec .info-pro-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.info-pro-sec span {
+    font-weight: 600;
+    color: #041d5c;
+}
+
+.info-pro-sec ul {
+    margin-top: 20px;
+}
+
+.info-pro-sec ul li {
+    margin: 20px 0 -10px 30px;
+    list-style: disc;
+}
+
+.info-pro-sec ul li span {
+    font-weight: 600;
+}
+
+.pro-pag-sec .info-pro-sec img {
+    width: 50%;
+    margin-right: 30px;
+}
+
+.info-pro-sec div a button {
+    margin-top: 35px;
+    margin-left: 80px;
+
+}
+
+/**complementos tuberia**/
+
+.cont-complementos {
+    background-color: #294896;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.cont-complementos h1 {
+    color: #fff;
+    padding: 60px 0;
+}
+
+.des-complementos {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.complemento {
+    width: 30%;
+    height: 300px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.complemento h4 {
+    font-size: 17px;
+    color: #18306d;
+}
+
+.complemento img {
+    display: block;
+    margin: auto;
+    width: 60%;
+    height: 55%;
+    margin-top: 10px;
+}
+
+.complemento h4 {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.complemento a button {
+    width: 100%;
+}
+
+/**boton de whatsapp**/
+.cont-bot-wpp {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10px;
+    right: 10px;
+    z-index: 5000;
+    position: fixed;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    box-shadow: 1px 3px 13px 0px rgba(44, 89, 210, 0.75);
+    -webkit-box-shadow: 1px 3px 13px 0px rgba(44, 89, 210, 0.75);
+    -moz-box-shadow: 1px 3px 13px 0px rgba(44, 89, 210, 0.75);
+}
+
+
+.cont-bot-wpp img {
+    width: 65px;
+    height: 65px;
+}
+
+/**media queries**/
+@media (max-width: 920px) {
+
+    .hamburger-menu-container {
+        display: flex;
+    }
+
+    #check {
+        display: block;
+    }
+
+    .logo-container {
+        width: 50%;
+    }
+
+    .nav-btn {
+        position: fixed;
+        height: calc(100vh - 3rem);
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        background-color: #014F86;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: .65s;
+    }
+
+    #check:checked~.nav-btn {
+        transform: translateX(0);
+    }
+
+    #check:checked~.nav-btn .nav-link,
+    #check:checked~.nav-btn .log-sign {
+        animation: animation .5s ease forwards var(--i);
+    }
+
+    .nav-links {
+        flex: initial;
+        width: 100%;
+    }
+
+    .nav-links>ul {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        width: 100%;
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    .nav-link>a {
+        line-height: 1;
+        padding: 1.6rem 2rem;
+    }
+
+    .nav-link:hover>a {
+        transform: scale(1);
+        background-color: #50a9d6;
+    }
+
+    .dropdown,
+    .dropdown.second {
+        position: initial;
+        top: initial;
+        left: initial;
+        transform: initial;
+        opacity: 1;
+        pointer-events: auto;
+        width: 100%;
+        padding: 0;
+        background-color: #3183ac;
+        display: none;
+    }
+
+    .nav-link:hover>.dropdown,
+    .dropdown-link:hover>.dropdown {
+        display: block;
+    }
+
+    .nav-link:hover>a>i,
+    .dropdown-link:hover>a>i {
+        transform: rotate(360deg);
+    }
+
+    .dropdown-link>a {
+        background-color: transparent;
+        color: #fff;
+        padding: 1.2rem 2rem;
+        line-height: 1;
+    }
+
+    .dropdown.second .dropdown-link>a {
+        padding: 1.2rem 2rem 1.2rem 3rem;
+    }
+
+    .dropdown.second .dropdown.second .dropdown-link>a {
+        padding: 1.2rem 2rem 1.2rem 4rem;
+    }
+
+    .dropdown-link:not(:nth-last-child(2)) {
+        border-bottom: none;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .dropdown-link:hover>a {
+        background-color: #3a91bd;
+    }
+
+
+    .nav-link>a>i {
+        font-size: 1.1rem;
+        transform: rotate(-90deg);
+        transition: .7s;
+    }
+
+    .dropdown i {
+        font-size: 1rem;
+        transition: .7s;
+    }
+
+     /**Header**/
+     .texto-slider-1{
+        height: 40%;
+        width: 80%;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .texto-slider-1 p{
+        width: 100%;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .texto-slider-1 > div{
+        width: 80%;
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+    }
+
+    /**Inicio sección slider**/
+
+    .texto-slider-1{
+        height: 40%;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .texto-slider-1 p{
+        width: 100%;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .texto-slider-1 img{
+        width: 90%;
+        object-fit: contain;
+    }
+
+    /**nosotros**/
+    /**nosotros**/
+    .nosotros {
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    .nosotros div div {
+        flex-wrap: wrap;
+    }
+
+    .nosotros div div img {
+        width: 50%;
+        height: 300px;
+        margin: 15px auto;
+    }
+
+
+     /* Seccion de Ecopiso */
+     .texto-ecopiso{
+        width: 60%;
+        margin: auto;
+    }
+
+    .texto-ecopiso a{
+        margin: auto;
+    }
+
+    .texto-ecopiso a button{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    /**Seccion compra lo nuestro**/
+    .compra-lo-nuestro{
+        height: 250px;
+    }
+
+     /* seccion de lineas de productos */
+
+     .lineas-productos a button {
+        width: 60%;
+    }
+
+    .contenedor-cajas {
+        flex-direction: column;
+    }
+
+    .caja-productos {
+        margin: 10px auto;
+        width: 60%;
+    }
+
+    .productos-linea h3{
+        font-size: 25px;
+    }
+
+    .productos-linea a{
+        font-size: 17px;
+    }
+
+    /**pagina de productos**/
+    .productos {
+        padding: 0;
+        padding-top: 25px;
+    }
+
+    .productos .caja-productos-sec {
+        width: 45%;
+        margin: 15px auto;
+    }
+
+    .caja-productos-sec .contenido-texto-productos {
+        height: 100%;
+    }
+
+    .caja-productos-sec .contenido-texto-productos h3 {
+        font-size: 25px;
+    }
+
+    .caja-productos-sec .contenido-texto-productos p {
+        width: 90%;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+
+}
+
+@media(max-width:767px) {
+    .contenedor {
+        width: 100%;
+    }
+
+    /**main**/
+    main {
+        height: 600px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    main .texto-main {
+        width: 90%;
+        padding: 10px;
+    }
+
+    main .img-main {
+        width: 100%;
+    }
+
+    /**Header**/
+    .texto-slider-1{
+        height: 40%;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .texto-slider-1 p{
+        width: 100%;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .texto-slider-1 > div{
+        width: 100%;
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+    }
+
+    /**Inicio sección slider**/
+
+    .texto-slider-1{
+        height: 40%;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .texto-slider-1 p{
+        width: 100%;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .texto-slider-1 img{
+        width: 90%;
+        object-fit: contain;
+    }
+
+    /* seccion de lineas de productos */
+
+    .lineas-productos a button {
+        width: 80%;
+    }
+
+    .contenedor-cajas {
+        flex-direction: column;
+    }
+
+    .caja-productos {
+        margin: 10px auto;
+        width: 80%;
+    }
+
+    .productos-linea h3{
+        font-size: 25px;
+    }
+
+    .productos-linea a{
+        font-size: 17px;
+    }
+
+    /* Seccion de Ecopiso */
+    .texto-ecopiso{
+        width: 80%;
+        margin: auto;
+    }
+
+    .texto-ecopiso a{
+        margin: auto;
+    }
+
+    .texto-ecopiso a button{
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    /**Seccion compra lo nuestro**/
+
+    .compra-lo-nuestro{
+        height: 480px;
+    }
+    
+    .compra-lo-nuestro div {
+        flex-wrap: wrap;
+    }
+    
+    .compra-lo-nuestro .logo-cln{
+        width: 80%;
+        margin: auto;
+    }
+
+    .compra-lo-nuestro .texto{
+        width: 80%;
+    }
+    
+    /**clientes**/
+    .cont-clientes img {
+        width: 20%;
+    }
+
+    .cont-clientes img.rect {
+        width: 55%;
+    }
+
+    /**proyectos**/
+    .contenedor-proyectos {
+        width: 80%;
+    }
+
+    /**footer**/
+    footer {
+        flex-wrap: wrap;
+    }
+
+    footer div {
+        width: 40%;
+        margin: auto;
+    }
+
+    /**paginas productos**/
+    .pro-pag-sec div h1 {
+        width: 98%;
+    }
+
+    .info-pro-sec {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .pro-pag-sec .info-pro-sec img {
+        width: 100%;
+    }
+
+    .info-pro-sec div a button {
+        margin: 35px 0;
+        width: 100%;
+    }
+
+    /**complementos tuberia**/
+    .des-complementos {
+        flex-wrap: wrap;
+    }
+
+    .complemento {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    /**nosotros**/
+    .nosotros {
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    .nosotros div div {
+        flex-wrap: wrap;
+    }
+
+    .nosotros div div img {
+        width: 100%;
+        height: 270px;
+        margin: 15px 0;
+    }
+
+    /**pagina de productos**/
+    .productos {
+        padding: 0;
+        padding-top: 25px;
+    }
+
+    .productos .caja-productos-sec {
+        width: 80%;
+        margin: 15px auto;
+    }
+
+    .caja-productos-sec .contenido-texto-productos {
+        height: 100%;
+    }
+
+    .caja-productos-sec .contenido-texto-productos h3 {
+        font-size: 25px;
+    }
+
+    .caja-productos-sec .contenido-texto-productos p {
+        width: 90%;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    /**pagina de ecopiso**/
+    main.ecopiso-pag {
+        height: 600px;
+    }
+
+    main.ecopiso-pag .eco-jamar {
+        flex-wrap: wrap;
+    }
+
+    main.ecopiso-pag .eco-jamar img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    main.ecopiso-pag .eco-jamar p {
+        text-align: justify;
+        padding-left: 0;
+        margin: auto;
+    }
+
+    .caja-caracteristicas {
+        width: 90%;
+        padding: 15px 0;
+        margin: auto;
+    }
+
+    .caracteristicas-eco img {
+        width: 95%;
+        margin: 30px auto;
+    }
+
+    .cont-referencias div.cont-caja {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cont-referencias div.cont-caja img {
+        width: 60%;
+        margin: auto;
+    }
+
+    .cont-accesorios .caja-accesorio {
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 300px;
+    }
+
+    .cont-accesorios .caja-accesorio img {
+        width: 70%;
+        height: 50%;
+        margin: auto;
+    }
+}
+
+@media(max-width: 575px) {
+
+    .contenedor {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    nav .img-enlace {
+        width: 50%;
+    }
+
+    nav .img-enlace img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .contenedor-menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: #014f86;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        transform: translateX(-100%);
+        transition: all 0.3s;
+    }
+
+    .contenedor-menu .menu-principal:hover ul {
+        display: none;
+        position: static;
+    }
+
+    .contenedor-menu .menu-principal:hover .submenu {
+        display: none;
+        position: static;
+    }
+
+    /**Inicio sección slider**/
+
+    /**Header**/
+    .texto-slider-1{
+        height: 40%;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .texto-slider-1 p{
+        width: 100%;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .texto-slider-1 > div{
+        width: 100%;
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+    }
+
+    /**main index**/
+    .contenedor {
+        width: 100%;
+    }
+
+    main {
+        height: 600px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    main .texto-main {
+        width: 90%;
+        padding: 10px;
+    }
+
+    main .img-main {
+        width: 100%;
+    }
+
+    /* seccion de lineas de productos */
+
+    .lineas-productos a button {
+        width: 93%;
+    }
+
+    .contenedor-cajas {
+        flex-direction: column;
+    }
+
+    .caja-productos {
+        margin: 10px auto;
+        width: calc(100% - 20px);
+        height: 480px;
+    }
+
+    /**ecopiso**/
+
+    .texto-ecopiso {
+        width: 90%;
+        margin: auto;
+    }
+
+    .texto-ecopiso a button {
+        width: 100%;
+    }
+
+    /**Seccion de compra lo nuestro**/
+    .compra-lo-nuestro{
+        height: 480px;
+    }
+    
+    .compra-lo-nuestro div {
+        flex-wrap: wrap;
+    }
+    
+    .compra-lo-nuestro .logo-cln{
+        width: 100%
+    }
+    
+    .compra-lo-nuestro .texto{
+        width: 80%;
+    }
+    
+    .compra-lo-nuestro .logo-cln img{
+        width: 100%
+    }
+
+    /**clientes**/
+    .cont-clientes img {
+        width: 33%;
+    }
+
+    .cont-clientes img.rect {
+        width: 55%;
+    }
+
+    /**proyectos**/
+
+    /**footer**/
+    footer {
+        flex-wrap: wrap;
+    }
+
+    footer div {
+        width: 100%;
+    }
+
+    /**paginas productos**/
+    .pro-pag-sec div h1 {
+        width: 98%;
+    }
+
+    .info-pro-sec {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .pro-pag-sec .info-pro-sec img {
+        width: 100%;
+    }
+
+    .info-pro-sec div a button {
+        margin-left: 0px;
+
+    }
+
+    /**complementos tuberia**/
+    .des-complementos {
+        flex-wrap: wrap;
+    }
+
+    .complemento {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /**nosotros**/
+    .nosotros {
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    .nosotros div div {
+        flex-wrap: wrap;
+    }
+
+    .nosotros div div img {
+        width: 100%;
+        height: 270px;
+        margin: 15px 0;
+    }
+
+    /**pagina de productos**/
+    .productos {
+        padding: 0;
+        padding-top: 25px;
+    }
+
+    .productos .caja-productos-sec {
+        width: 80%;
+        margin: 15px auto;
+    }
+
+    .caja-productos-sec .contenido-texto-productos {
+        height: 100%;
+    }
+
+    .caja-productos-sec .contenido-texto-productos h3 {
+        font-size: 20px;
+    }
+
+    .caja-productos-sec .contenido-texto-productos p {
+        width: 90%;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /**pagina de ecopiso**/
+    main.ecopiso-pag {
+        height: 500px;
+    }
+
+    main.ecopiso-pag .eco-jamar {
+        flex-wrap: wrap;
+    }
+
+    main.ecopiso-pag .eco-jamar img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    main.ecopiso-pag .eco-jamar p {
+        text-align: justify;
+        padding-left: 0;
+        margin: auto;
+    }
+
+    .caja-caracteristicas {
+        width: 90%;
+        padding: 15px 0;
+        margin: auto;
+    }
+
+    .caracteristicas-eco img {
+        width: 95%;
+        margin: 30px auto;
+    }
+
+    .cont-referencias div.cont-caja {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cont-referencias div.cont-caja img {
+        width: 90%;
+    }
+
+    .cont-referencias ul li p {
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .cont-accesorios .caja-accesorio {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 300px;
+    }
+
+    .cont-accesorios .caja-accesorio img {
+        width: 70%;
+        height: 50%;
+        margin: auto;
+    }
+}

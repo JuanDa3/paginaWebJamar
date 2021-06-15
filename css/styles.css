@@ -588,7 +588,6 @@ a.boton-1 button i {
 }
 
 /**clientes**/
-
 .clientes {
     margin-top: 30px;
     background-color: #fff;
@@ -765,6 +764,18 @@ main.ecopiso-pag .eco-jamar p {
     width: 50%;
     height: 100%;
 }
+
+/**inicio para estilos de pagina de andenes**/
+.hero-alcantarillado{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/obraIndural1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
 
 /**inicio estilos proyectos**/
 .proyectos {

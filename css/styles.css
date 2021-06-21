@@ -383,6 +383,11 @@ a.boton-desactivado button i {
     width: 40%;
     text-align: left;
     color: #fff;
+    margin-bottom: 100px;
+}
+
+.texto-slider-1 img {
+    margin-bottom: 100px;
 }
 
 .texto-slider-1 a {
@@ -825,10 +830,15 @@ main.ecopiso-pag .eco-jamar p {
     max-height: 190px;
 }
 
+.caja-proyecto .cont-img img{
+    border-radius: 5px;
+}
+
 .caja-proyecto h3 {
     margin-bottom: 10px;
     font-size: 23px;
     color: #fff;
+    height: 15%;
 }
 
 .cont-texto p {
@@ -846,7 +856,7 @@ main.ecopiso-pag .eco-jamar p {
     background-color: #fff;
 }
 
-/**inicio BLog**/
+/**inicio Blog**/
 .blog {
     background-color: #fff;
     height: 480px;
@@ -960,64 +970,94 @@ footer div a i {
 }
 
 /**Pagina de Nosotros**/
-
-
-h2.nosotros {
-    text-transform: none;
-}
-
-.nosotros {
+.asi-empezo-todo{
     width: 80%;
-    margin: 120px auto;
-    background-color: #e9ecef;
-
-}
-
-.nosotros div {
-    width: 100%;
-}
-
-.nosotros div div {
-    display: flex;
-    width: 100%;
-}
-
-.nosotros div div p {
-    text-align: justify;
-    margin: auto 30px;
-}
-
-.nosotros div div img {
-    width: 70%;
-    height: 350px;
+    margin: 30px auto;
+    text-align: center;
+    background-color: #fff;
     border-radius: 5px;
+    padding: 20px;
 }
 
-.slider-nosotros{
-    width: 90%;
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.186);
-    margin: auto;
+.asi-empezo-todo h2{
+    margin: 15px auto;
 }
 
-.swiper-nosotros{
-    width: 100%;
-    height: 100%;
+.asi-empezo-todo p{
+    text-align: justify;
+} 
+
+.asi-empezo-todo span{
+    font-weight: bold;
+    color: #294896;
+} 
+
+.fondo-pag-nosotros{
+    width: calc(80% + 30px);
+    height: 300px;
+    margin: 20px auto;
 }
 
-.sln{
+.fondo-pag-nosotros img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: bottom;
+    margin: auto;
+    border-radius: 5px;
 }
 
+.fondo-pag-nosotros.op-center  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+    border-radius: 5px;
+}
+
+section.ayer-hoy{
+    width: 80%;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+section.ayer-hoy h2{
+   display: block;
+   margin:  15px auto;
+}
+
+section.ayer-hoy p{
+    text-align: justify;
+}
+
+.columnas-2{
+    columns: 2;
+    column-gap: 20px;
+    text-align: justify;
+}
+
+.columnas-3{
+    columns: 3;
+    column-gap: 20px;
+}
 /**pagina de productos**/
 .hero-pag-sec {
     width: 100%;
     height: 100vh;
-    background-image: url(../img/circasia2.jpg);
     background-size: cover;
+    z-index: 0;
     position: relative;
+}
+
+.hero-pag-sec img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
 }
 
 .hero-pag-sec .texto-hero-pag-sec {
@@ -1025,7 +1065,7 @@ h2.nosotros {
     position: absolute;
     z-index: 50;
     width: 100%;
-    height: 100%;
+    height: calc(50% + 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1060,6 +1100,7 @@ h2.nosotros {
     position: relative;
     margin-bottom: 20px;
     display: flex;
+    z-index: 0;
 }
 
 .productos .caja-productos-sec div {
@@ -1092,6 +1133,10 @@ h2.nosotros {
     overflow: hidden;
 }
 
+/* .caja-productos-sec .contenido-texto-productos button{
+    background-color: #014f86;
+} */
+
 .caja-productos-sec .contenido-texto-productos {
     color: rgb(255, 255, 255);
 }
@@ -1107,10 +1152,8 @@ h2.nosotros {
 }
 
 /**paginas de productos**/
-
 .pro-pag-sec div {
     margin: auto;
-    /* width: 80%; */
     background-color: #fff;
 }
 
@@ -1233,6 +1276,30 @@ h2.nosotros {
 .cont-bot-wpp img {
     width: 65px;
     height: 65px;
+}
+
+/** Pagina blog seccion apumm **/
+.apumm{
+    margin: auto;
+    width: 80%;
+    margin-top: 60px;
+}
+
+.apumm p{
+    text-align: justify;
+    margin-top: 20px;
+}
+
+.img-apumm{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.img-apumm img{
+    width: 35%;
+    border-radius: 5px;
 }
 
 /**media queries**/
@@ -1813,7 +1880,7 @@ h2.nosotros {
     .texto-slider-1{
         height: 40%;
         flex-wrap: wrap;
-        margin-bottom: 30px;
+        margin-bottom: 100px;
     }
 
     .texto-slider-1 p{
@@ -1907,7 +1974,9 @@ h2.nosotros {
     }
 
     /**proyectos**/
-
+    .caja-proyecto{
+        margin: 10px;
+    }
     /**footer**/
     footer {
         flex-wrap: wrap;
@@ -2046,3 +2115,104 @@ h2.nosotros {
         margin: auto;
     }
 }
+
+a.btn-inf-proy button{
+height: 40px;
+width: 200px;
+border: none;
+border-radius: 5px;
+background: rgb(52, 143, 21);
+font-size: 15px;
+color: #fff;
+margin-bottom: 25px;
+cursor: pointer;
+margin-top: 30px;
+}
+
+a.btn-inf-proy button i{
+   margin-left: 10px; 
+}
+
+.overlay{
+    background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay.active {
+	visibility: visible;
+}
+
+.overlay .popup {
+	background: #F8F8F8;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	padding: 20px;
+	text-align: center;
+	width: 70%!important;
+    height: 80%;
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popup .btn-cerrar-popup {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #000000;
+}
+
+.contenido-popup{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.contenido-popup > div{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+    background-color: rgba(230, 72, 72, 0.233);
+}
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active {	transform: scale(1); opacity: 1; }
+.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+.swiper-container-5{
+    background-color: rgb(167, 69, 69); 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-container-5 .swiper-wrapper{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-container-5 .swiper-wrapper .swiper-slide{
+    width: 100%;
+    height: 100%;
+}
+

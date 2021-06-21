@@ -76,3 +76,16 @@ const swiper = new Swiper('.swiper-container', {
     }
   });
 
+  var swiper_4 = new Swiper('.swiper-container-4', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    slidesPerGroup: 1,
+    loop: true,
+    //loopFillGroupWithBlank: true,
+    grabCursor: true,
+    pagination: {
+      el: '.swiper-pagination-4',
+      clickable: true,
+      dynamicBullets: true,
+    },
+  });

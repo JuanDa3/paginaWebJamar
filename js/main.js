@@ -111,7 +111,7 @@ function crearMatrizLi() {
          "Rejas", "Tapas", "Estibas", "Lavaderos", "Madera Plástica", "Marcos"
       ], "Proyectos"
    ];
-
+ 
    tiempo = .6;
 
    for (let i = 0; i < valores.length; i++) {

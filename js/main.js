@@ -320,3 +320,8 @@ function aggFooter(){
 aggMenu();
 aggFooter();
 
+//botones para activar el pop-up
+
+function abrirPopup(){
+   console.log("entra");
+}

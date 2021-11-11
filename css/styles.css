@@ -93,6 +93,7 @@ a.boton-desactivado button i {
 .header-index {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 .menu-princ {

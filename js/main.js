@@ -140,7 +140,7 @@ function crearMatrizLi() {
                navLink.setAttribute("class", "nav-link");
                navLink.setAttribute("style", "--i: " + tiempo + "s");
                var ainNL = document.createElement("a");
-               ainNL.setAttribute("href", "#");
+               ainNL.setAttribute("href", "productos.html");
                ainNL.innerHTML = "" + secundarias[0];
                navLink.appendChild(ainNL);
                
